@@ -345,9 +345,16 @@ Scope.prototype = {
         //
         // 3. doesn't shadow a name that is referenced but not
         //    defined (possibly global defined elsewhere).
+        var num_words = words.words.length;
+        var jump = Math.floor(num_words / 5);
         for (;;) {
             //var m = base54(++this.cname), prior;
-            var m = words.words[++this.cname], prior;
+            this.cname += Math.floor(Math.random()*jump);
+            if(this.cname >= num_words) {
+                this.cname = Math.floor(Math.random()*10000);
+            }
+            // console.log(words.words[this.cname], this.cname);
+            var m = words.words[this.cname], prior;
 
             // case 1.
             prior = this.has_mangled(m);

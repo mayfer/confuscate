@@ -12,7 +12,7 @@ var options = {
     ast: false,
     consolidate: false,
     mangle: true,
-    mangle_toplevel: false,
+    mangle_toplevel: true,
     no_mangle_functions: false,
     squeeze: true,
     make_seqs: true,
@@ -27,7 +27,7 @@ var options = {
     lift_vars: false,
     codegen_options: {
         ascii_only: false,
-        beautify: false,
+        beautify: true,
         indent_level: 4,
         indent_start: 0,
         quote_keys: false,
