@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='{{ STATIC_URL }}styles/style.css' media='screen' />
+        <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Averia+Libre:300' rel='stylesheet' type='text/css'>
+        <meta charset='utf-8' />
+        <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+        {% block head_tags %}{% endblock %}
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-28051023-1']);
+          _gaq.push(['_setDomainName', 'muratayfer.com']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+    </head>
+    <body class='{% block page %}{% endblock %}'>
+        <div class='wrapper'>
+            <div id='crumbs'>
+                <div><a href='{% url home %}' class='home'></a></div>
+                <div>{% block navtitle %}{% endblock %} &laquo;</div>
+            </div>
+        </div>
+        {% block content %}{% endblock %}
+        <div id='footer'>reach me at <a href='mailto:murat@ayfer.net'>murat@ayfer.net</a></div>
+        <div id='preload'></div>
+    </body>
+</html>
+
